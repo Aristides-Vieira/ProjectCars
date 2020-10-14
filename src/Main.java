@@ -1,3 +1,4 @@
+import cars.Car;
 import cars.PlayerCar;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
@@ -10,25 +11,26 @@ public class Main {
 
         SimpleGfxGrid grid = new SimpleGfxGrid(8);
         PlayerCar player = new PlayerCar();
- /*       Keyboard kb = new Keyboard(player);
+        Game game = new Game(player);
 
-
-        KeyboardEvent left = new KeyboardEvent();
-        left.setKey(KeyboardEvent.KEY_LEFT);
-        left.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
-        kb.addEventListener(left);
-
-
-        KeyboardEvent right = new KeyboardEvent();
-        right.setKey(KeyboardEvent.KEY_RIGHT);
-        right.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
-        kb.addEventListener(right);
-
-*/
         grid.init();
 
         player.init();
 
-    }
+        game.init();
 
+        Car vehicle = new Car(220);
+
+        while (true) {
+            try {
+                Thread.sleep(200);
+                vehicle.move();
+                vehicle.delete();
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
+
+        }
+
+    }
 }

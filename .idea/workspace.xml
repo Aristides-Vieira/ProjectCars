@@ -20,22 +20,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56a5df51-dee7-4f77-b20e-ba1508312ed0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/simple_graphics_0_2_1_SNAPSHOT2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cars/CarFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectCars.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectCars.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjectCars/META-INF/ProjectCars.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjectCars/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectCars/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectCars/cars/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectCars/cars/Car.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjectCars/cars/PlayerCar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectCars/cars/PlayerCar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjectCars/simpleGfx/SimpleGfxGrid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjectCars/simpleGfx/SimpleGfxGrid.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cars/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cars/Car.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cars/PlayerCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cars/PlayerCar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simpleGfx/SimpleGfxGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simpleGfx/SimpleGfxGrid.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -51,6 +59,10 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -77,6 +89,8 @@
       <option name="presentableId" value="Default" />
       <updated>1602662783798</updated>
       <workItem from="1602662785178" duration="1233000" />
+      <workItem from="1602693828349" duration="283000" />
+      <workItem from="1602694138697" duration="7773000" />
     </task>
     <servers />
   </component>
@@ -93,24 +107,41 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1878" height="305" key="GridCell.Tab.0.bottom" timestamp="1602664024800">
+    <state x="448" y="121" key="#Project_Structure" timestamp="1602693898738">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1602664024800" />
-    <state width="1878" height="305" key="GridCell.Tab.0.center" timestamp="1602664024799">
+    <state x="448" y="121" key="#Project_Structure/0.0.1920.1080@0.0.1920.1080" timestamp="1602693898738" />
+    <state x="1253" y="248" key="#com.intellij.ide.util.MemberChooser" timestamp="1602700807540">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1602664024799" />
-    <state width="1878" height="305" key="GridCell.Tab.0.left" timestamp="1602664024799">
+    <state x="1253" y="248" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1602700807540" />
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom" timestamp="1602701908298">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1602664024799" />
-    <state width="1878" height="305" key="GridCell.Tab.0.right" timestamp="1602664024800">
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1602701908298" />
+    <state width="917" height="305" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1602695399966" />
+    <state width="1878" height="305" key="GridCell.Tab.0.center" timestamp="1602701908297">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1602664024800" />
+    <state width="1878" height="305" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1602701908297" />
+    <state width="917" height="305" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1602695399964" />
+    <state width="1878" height="305" key="GridCell.Tab.0.left" timestamp="1602701908296">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="305" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1602701908296" />
+    <state width="917" height="305" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1602695399963" />
+    <state width="1878" height="305" key="GridCell.Tab.0.right" timestamp="1602701908298">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="305" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1602701908298" />
+    <state width="917" height="305" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1602695399965" />
+    <state x="448" y="121" key="SettingsEditor" timestamp="1602694100689">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="448" y="121" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1602694100689" />
     <state x="625" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1602663808113">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
