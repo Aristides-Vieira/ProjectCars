@@ -10,8 +10,8 @@ public class Main {
 
         SimpleGfxGrid grid = new SimpleGfxGrid(8);
         PlayerCar player = new PlayerCar();
-        Keyboard kb = new Keyboard(player);
-        Keyboard kbR = new Keyboard(player);
+ /*       Keyboard kb = new Keyboard(player);
+
 
         KeyboardEvent left = new KeyboardEvent();
         left.setKey(KeyboardEvent.KEY_LEFT);
@@ -22,11 +22,9 @@ public class Main {
         KeyboardEvent right = new KeyboardEvent();
         right.setKey(KeyboardEvent.KEY_RIGHT);
         right.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
-        kbR.addEventListener(right);
+        kb.addEventListener(right);
 
-
-
-
+*/
         grid.init();
 
         player.init();
