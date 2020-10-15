@@ -10,27 +10,15 @@ public class Main {
     public static void main(String[] args) {
 
         SimpleGfxGrid grid = new SimpleGfxGrid(8);
+        grid.init();
+
         PlayerCar player = new PlayerCar();
         Game game = new Game(player);
 
-        grid.init();
-
         player.init();
+        System.out.println("player car col : " + player.getCol());
 
         game.init();
-
-        Car vehicle = new Car(220);
-
-        while (true) {
-            try {
-                Thread.sleep(200);
-                vehicle.move();
-                vehicle.delete();
-            } catch (InterruptedException ex) {
-                ex.printStackTrace();
-            }
-
-        }
 
     }
 }

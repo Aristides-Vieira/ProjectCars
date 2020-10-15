@@ -1,24 +1,69 @@
 import cars.Car;
 import cars.PlayerCar;
 
-public class Game {
-    private Car cars;
-    private int manufactoredCars = 1;
-    private PlayerCar playerCar;
+import java.awt.*;
+import java.util.LinkedList;
+import java.util.ListIterator;
 
-    public Game(PlayerCar playerCar){
+
+public class Game {
+
+
+    private int totalCars = 50;
+    private PlayerCar playerCar;
+    private int timer = 0;
+
+
+    public Game(PlayerCar playerCar) {
         this.playerCar = playerCar;
     }
 
     public void init() {
 
-        cars = new Car(220);
+       LinkedList<Car> carLinkedList = new LinkedList<>();
 
-            if (cars.getCounter()>= 62 && cars.getCol() == playerCar.getCol()) {
-                cars.crash();
-                System.out.println("Crashou");
+
+        for (int i = 0; i < totalCars; i++) {
+            if (timer % 99 == 0) {
+                carLinkedList.add(new Car());
+            }
+        }
+        ListIterator<Car> carIterator = carLinkedList.listIterator();
+        System.out.println(carLinkedList.size());
+
+        /*Car firstCar = new Car();
+        firstCar.fillCar();
+        firstCar.setColor();
+        firstCar.move();
+        */
+        //System.out.println("enemy car init col: " + playerCar.getCol());
+
+        while (!playerCar.isCrashed()) {
+
+            try {
+                for (Car car : carLinkedList) {
+
+                    car.move();
+                    car.delete();
+                    car.fillCar();
+
+
+                   if (car.getCounter() >= 62 && car.getCol() == playerCar.getCol()) {
+
+                       playerCar.crash();
+                        System.out.println("Game Over");
+                    }
+                }
+                Thread.sleep(200);
+                timer++;
+
+
+
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
             }
 
         }
     }
+}
 

@@ -8,29 +8,43 @@ public class Car {
 
     private Rectangle vehicle;
     private int counter = 0;
-
-
     private int col;
 
 
-    private boolean crashed = false;
-
-    public Car(int col){
-        this.col = 220;
+    public Car(){
+        this.col = pickCol();
         vehicle = new Rectangle(col, 10, 80, 90);
-        vehicle.fill();
         vehicle.setColor(Color.RED);
 
     }
+    public void fillCar() {
+        vehicle.fill();
+    }
 
+    public void setColor(){
+        vehicle.setColor(Color.GREEN);
+    }
+
+    public int pickCol(){
+
+        int random = (int) Math.round(Math.random() * 3);
+
+        switch(random){
+
+            default:
+                return 220;
+            case 1:
+                return 320;
+            case 2:
+                return 420;
+            case 3:
+                return 520;
+        }
+    }
 
     public void move(){
         vehicle.translate(0,10);
         counter++;
-    }
-
-    public void crash(){
-        this.crashed = true;
     }
 
     public void delete(){
@@ -39,9 +53,6 @@ public class Car {
         }
     }
 
-    public boolean isCrashed() {
-        return crashed;
-    }
     public int getCounter() {
         return counter;
     }
