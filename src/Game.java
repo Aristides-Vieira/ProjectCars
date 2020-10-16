@@ -21,11 +21,9 @@ public class Game {
         LinkedList<Car> carLinkedList = new LinkedList<>();
 
 
-        for (int i = 0; i < totalCars; i++) {
-            if (timer % 10 == 0) {
-                carLinkedList.add(new Car());
-            }
-        }
+
+        carLinkedList.add(new Car());
+
         ListIterator<Car> carIterator = carLinkedList.listIterator();
         System.out.println(carLinkedList.size());
 
@@ -33,6 +31,13 @@ public class Game {
         while (!playerCar.isCrashed()) {
 
             try {
+
+                    if (timer % 11 == 0) {
+                        carLinkedList.add(new Car());
+                    }
+
+
+
                 for (int i = 0; i < carLinkedList.size(); i++) {
 
                     carLinkedList.get(i).fillCar();
@@ -54,7 +59,7 @@ public class Game {
                     }
                 }
 
-                Thread.sleep(100);
+                Thread.sleep(200);
                 timer++;
 
 
