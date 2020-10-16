@@ -50,6 +50,7 @@ public class Car {
     public void delete(){
         if(counter > 70 ){
             vehicle.delete();
+
         }
     }
 

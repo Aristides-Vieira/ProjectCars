@@ -1,7 +1,5 @@
 import cars.Car;
 import cars.PlayerCar;
-
-import java.awt.*;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
@@ -9,7 +7,7 @@ import java.util.ListIterator;
 public class Game {
 
 
-    private int totalCars = 50;
+    private int totalCars = 2;
     private PlayerCar playerCar;
     private int timer = 0;
 
@@ -20,42 +18,50 @@ public class Game {
 
     public void init() {
 
-       LinkedList<Car> carLinkedList = new LinkedList<>();
+        LinkedList<Car> carLinkedList = new LinkedList<>();
 
 
-        for (int i = 0; i < totalCars; i++) {
-            if (timer % 99 == 0) {
-                carLinkedList.add(new Car());
-            }
-        }
+
+        carLinkedList.add(new Car());
+
         ListIterator<Car> carIterator = carLinkedList.listIterator();
         System.out.println(carLinkedList.size());
 
-        /*Car firstCar = new Car();
-        firstCar.fillCar();
-        firstCar.setColor();
-        firstCar.move();
-        */
-        //System.out.println("enemy car init col: " + playerCar.getCol());
 
         while (!playerCar.isCrashed()) {
 
             try {
-                for (Car car : carLinkedList) {
 
-                    car.move();
-                    car.delete();
-                    car.fillCar();
+                    if (timer % 11 == 0) {
+                        carLinkedList.add(new Car());
+                    }
 
 
-                   if (car.getCounter() >= 62 && car.getCol() == playerCar.getCol()) {
 
-                       playerCar.crash();
+                for (int i = 0; i < carLinkedList.size(); i++) {
+
+                    carLinkedList.get(i).fillCar();
+                    carLinkedList.get(i).move();
+                    carLinkedList.get(i).delete();
+                    if (carLinkedList.get(i).getCounter() >70) {
+                        carLinkedList.remove(i);
+                        System.out.println(carLinkedList.size());
+                    }
+                }
+
+
+                for (int i = 0; i < carLinkedList.size(); i++) {
+
+
+                    if (carLinkedList.get(i).getCounter() >= 62 && carLinkedList.get(i).getCol() == playerCar.getCol()){
+                        playerCar.crash();
                         System.out.println("Game Over");
                     }
                 }
+
                 Thread.sleep(200);
                 timer++;
+
 
 
 
