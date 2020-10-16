@@ -59,7 +59,7 @@ public class Game {
                     }
                 }
 
-                Thread.sleep(200);
+                Thread.sleep(100);
                 timer++;
 
 
