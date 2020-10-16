@@ -18,7 +18,13 @@ public class Main {
         player.init();
         System.out.println("player car col : " + player.getCol());
 
-        game.init();
+        game.playGame();
+
+        if(player.getMartelo()) {
+                System.out.println("space funciona");
+                game.deleteGameOverScreen();
+                game.playGame();
+        }
 
     }
 }

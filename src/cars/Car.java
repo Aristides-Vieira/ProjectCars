@@ -2,7 +2,6 @@ package cars;
 
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
-import simpleGfx.SimpleGfxGridPosition;
 
 public class Car {
 

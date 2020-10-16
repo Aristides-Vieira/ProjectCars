@@ -14,8 +14,9 @@ public class PlayerCar implements KeyboardHandler {
     private Rectangle player;
     private boolean crashed;
     private int col;
+    private boolean martelo;
 
-    public PlayerCar(){
+    public PlayerCar() {
 
         col = 220;
         crashed = false;
@@ -25,22 +26,27 @@ public class PlayerCar implements KeyboardHandler {
     }
 
 
-
     public void init() {
 
-            keyboard = new Keyboard(this);
+        keyboard = new Keyboard(this);
 
-            KeyboardEvent left = new KeyboardEvent();
-            left.setKey(KeyboardEvent.KEY_LEFT);
-            left.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        KeyboardEvent left = new KeyboardEvent();
+        left.setKey(KeyboardEvent.KEY_LEFT);
+        left.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
 
 
-            KeyboardEvent right = new KeyboardEvent();
-            right.setKey(KeyboardEvent.KEY_RIGHT);
-            right.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        KeyboardEvent right = new KeyboardEvent();
+        right.setKey(KeyboardEvent.KEY_RIGHT);
+        right.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
 
-            keyboard.addEventListener(left);
-            keyboard.addEventListener(right);
+        KeyboardEvent space = new KeyboardEvent();
+        space.setKey(KeyboardEvent.KEY_SPACE);
+        space.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+
+
+        keyboard.addEventListener(left);
+        keyboard.addEventListener(right);
+        keyboard.addEventListener(space);
 
     }
 
@@ -64,13 +70,20 @@ public class PlayerCar implements KeyboardHandler {
                     col = col + 100;
                 }
             }
+
+        }
+        if (KeyboardEvent.KEY_SPACE == keyboardEvent.getKey()) {
+            martelo = true;
+            System.out.println("kasdjlakjsd");
         }
     }
+
 
     @Override
     public void keyReleased(KeyboardEvent keyboardEvent) {
 
     }
+
     public int getCol() {
         return col;
     }
@@ -83,7 +96,11 @@ public class PlayerCar implements KeyboardHandler {
         this.crashed = crashed;
     }
 
-    public void crash(){
+    public void crash() {
         crashed = true;
+    }
+
+    public boolean getMartelo(){
+        return martelo;
     }
 }
