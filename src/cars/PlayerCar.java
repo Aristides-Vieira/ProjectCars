@@ -6,12 +6,13 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 
 public class PlayerCar implements KeyboardHandler {
 
     private Keyboard keyboard;
-    private Rectangle player;
+    private Picture player;
     private boolean crashed;
     private int col;
     private boolean martelo;
@@ -20,9 +21,8 @@ public class PlayerCar implements KeyboardHandler {
 
         col = 220;
         crashed = false;
-        player = new Rectangle(220, 710, 80, 90);
-        player.fill();
-        player.setColor(Color.BLUE);
+        player = new Picture (220, 710,"/home/aristides/Documents/Academia-de-codigo/Projectos de grupo/ProjectCars/Resources/police.png" );
+        player.draw();
     }
 
 

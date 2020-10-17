@@ -16,8 +16,8 @@ public class SimpleGfxGrid {
 
     private Picture backGroundImage;
 
-    private Picture raceTrack;
-    private Line line;
+   // private Picture raceTrack;
+   // private Line line;
 
 
     public SimpleGfxGrid (int cols) {
@@ -29,10 +29,10 @@ public class SimpleGfxGrid {
     public void init () {
 
 
-        backGroundImage = new Picture(PADDING,PADDING, "/Users/codecadet/Documents/back800800.jpg");
-        raceTrack = new Picture(PADDING+200, PADDING, "/Users/codecadet/Documents/Road400800.png");
+        backGroundImage = new Picture(PADDING,PADDING, "/home/aristides/Documents/Academia-de-codigo/Projectos de grupo/ProjectCars/Resources/Untitled.png");
+      // raceTrack = new Picture(PADDING+200, PADDING, "/home/aristides/Documents/Academia-de-codigo/Projectos de grupo/ProjectCars/Resources/asphalt.png");
 
-        line = new Line(PADDING+700, PADDING, PADDING+700, 800);
+        //line = new Line(PADDING+700, PADDING, PADDING+700, 800);
 
 
 
@@ -42,13 +42,13 @@ public class SimpleGfxGrid {
 
         backGroundImage.draw();
 
-        raceTrack.draw();
+       // raceTrack.draw();
 
 
 
 
 
-        line.setColor(Color.BLACK);
+       // line.setColor(Color.BLACK);
     }
 
 
