@@ -10,25 +10,29 @@ public class Car {
     private int col;
 
 
-    public Car(){
+
+    public Car() {
         this.col = pickCol();
         vehicle = new Rectangle(col, 10, 80, 90);
         vehicle.setColor(Color.RED);
 
+
+
     }
+
     public void fillCar() {
         vehicle.fill();
     }
 
-    public void setColor(){
+    public void setColor() {
         vehicle.setColor(Color.GREEN);
     }
 
-    public int pickCol(){
+    public int pickCol() {
 
         int random = (int) Math.round(Math.random() * 3);
 
-        switch(random){
+        switch (random) {
 
             default:
                 return 220;
@@ -41,15 +45,14 @@ public class Car {
         }
     }
 
-    public void move(){
-        vehicle.translate(0,10);
-        counter++;
-    }
+    public void move() {
+            vehicle.translate(0, 10);
+            counter++;
+        }
 
-    public void delete(){
-        if(counter > 70 ){
+    public void delete() {
+        if (counter >= 70) {
             vehicle.delete();
-
         }
     }
 

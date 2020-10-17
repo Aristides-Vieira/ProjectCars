@@ -74,7 +74,6 @@ public class PlayerCar implements KeyboardHandler {
         }
         if (KeyboardEvent.KEY_SPACE == keyboardEvent.getKey()) {
             martelo = true;
-            System.out.println("kasdjlakjsd");
         }
     }
 
