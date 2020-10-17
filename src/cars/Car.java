@@ -2,10 +2,11 @@ package cars;
 
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Car {
 
-    private Rectangle vehicle;
+    private Picture vehicle;
     private int counter = 0;
     private int col;
 
@@ -13,20 +14,17 @@ public class Car {
 
     public Car() {
         this.col = pickCol();
-        vehicle = new Rectangle(col, 10, 80, 90);
-        vehicle.setColor(Color.RED);
+        vehicle = new Picture(col, 10, "/Users/codecadet/Documents/car.png");
+
 
 
 
     }
 
     public void fillCar() {
-        vehicle.fill();
+        vehicle.draw();
     }
 
-    public void setColor() {
-        vehicle.setColor(Color.GREEN);
-    }
 
     public int pickCol() {
 
@@ -51,7 +49,7 @@ public class Car {
         }
 
     public void delete() {
-        if (counter >= 70) {
+        if (counter >= 71) {
             vehicle.delete();
         }
     }

@@ -33,8 +33,6 @@ public class Game {
 
             LinkedList<Car> carLinkedList = new LinkedList<>();
 
-            ListIterator<Car> carIterator = carLinkedList.listIterator();
-
 
             while (!playerCar.isCrashed()) {
                 try {
@@ -50,7 +48,7 @@ public class Game {
                         carLinkedList.get(i).delete();
 
 
-                        if (carLinkedList.get(i).getCounter() == 70) {
+                        if (carLinkedList.get(i).getCounter() == 71) {
                             score += 10;
                             level++;
                             System.out.println(score);
@@ -59,7 +57,7 @@ public class Game {
                     }
 
                     for (int i = 0; i < carLinkedList.size(); i++) {
-                        if (carLinkedList.get(i).getCounter() > 62 && carLinkedList.get(i).getCounter() < 71 && carLinkedList.get(i).getCol() == playerCar.getCol()) {
+                        if (carLinkedList.get(i).getCounter() > 62 && carLinkedList.get(i).getCounter() <= 71 && carLinkedList.get(i).getCol() == playerCar.getCol()) {
 
                             playerCar.crash();
                             System.out.println("Game Over");
