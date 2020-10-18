@@ -1,5 +1,6 @@
 import cars.Car;
 import cars.PlayerCar;
+import org.academiadecodigo.simplegraphics.graphics.Text;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 
 import java.util.ArrayList;
@@ -17,9 +18,13 @@ public class Game {
 
     private PlayerCar playerCar;
     private int timer;
+
+
+
     private int score;
     private int level;
     private Rectangle gameOverScreen;
+    private Text scoreDisplay;
 
 
     public Game(PlayerCar playerCar) {
@@ -27,19 +32,27 @@ public class Game {
         score = 0;
         timer = 0;
         level = 0;
+
+        scoreDisplay = new Text(730,50, Integer.toString(score));
+        scoreDisplay.grow(10,10);
+        scoreDisplay.draw();
+        scoreDisplay.setColor(Color.BLACK);
+
     }
 
     public void playGame() {
-
-
+        
         List<Car> parkedCars = new ArrayList<Car>();
         List<Car> runningCars = new ArrayList<Car>();
+
 
 
         while (!playerCar.isCrashed()) {
             try {
 
+
                 if (timer % 11 == 0) {
+
                     if (parkedCars.size() > 2) {
                         runningCars.add(parkedCars.remove(0));
                     } else {
@@ -59,10 +72,9 @@ public class Game {
 
                     if (runningCars.get(i).getCounter() == 71) {
                         score += 10;
+                        scoreDisplay.setText(Integer.toString(score));
                         level++;
                         runningCars.get(i).setCounter(0);
-                        System.out.println(i);
-
                         carToPark = i;
                     }
                 }

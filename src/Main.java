@@ -5,7 +5,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        /*SimpleGfxGrid grid = new SimpleGfxGrid(8);
+        SimpleGfxGrid grid = new SimpleGfxGrid(8);
         grid.init();
 
         PlayerCar player = new PlayerCar();
@@ -15,7 +15,7 @@ public class Main {
         System.out.println("player car col : " + player.getCol());
 
         game.playGame();
-*/
+/*
         SimpleGfxGrid grid = new SimpleGfxGrid(8);
         grid.init();
         PlayerCar playerCar = new PlayerCar();
@@ -29,7 +29,7 @@ public class Main {
             }
 
 
-        }
+        }*/
     }
 }
 
