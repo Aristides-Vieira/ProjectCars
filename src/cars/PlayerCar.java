@@ -21,7 +21,7 @@ public class PlayerCar implements KeyboardHandler {
         martelo = false;
         col = 220;
         crashed = false;
-        player = new Picture (220, 710,"Resources/police.jpeg" );
+        player = new Picture (220, 710,"Resources/ship.png" );
         player.draw();
     }
 

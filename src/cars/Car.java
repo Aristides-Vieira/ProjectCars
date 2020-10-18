@@ -24,7 +24,7 @@ public class Car {
     public void fillCar() {
 
         if (!isDrawn) {
-            vehicle = new Picture(col, 10, "Resources/car4.jpeg");
+            vehicle = new Picture(col, 10, "Resources/enemyship.png");
             vehicle.draw();
             isDrawn = true;
         }

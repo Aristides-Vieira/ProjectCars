@@ -33,15 +33,15 @@ public class Game {
         timer = 0;
         level = 0;
 
-        scoreDisplay = new Text(730,50, Integer.toString(score));
-        scoreDisplay.grow(10,10);
+        scoreDisplay = new Text(740,50, Integer.toString(score));
+        scoreDisplay.grow(15,15);
         scoreDisplay.draw();
         scoreDisplay.setColor(Color.BLACK);
 
     }
 
     public void playGame() {
-        
+
         List<Car> parkedCars = new ArrayList<Car>();
         List<Car> runningCars = new ArrayList<Car>();
 
@@ -49,7 +49,6 @@ public class Game {
 
         while (!playerCar.isCrashed()) {
             try {
-
 
                 if (timer % 11 == 0) {
 
@@ -138,7 +137,6 @@ public class Game {
     public void deleteGameOverScreen() {
         gameOverScreen.delete();
     }
-
 
 }
 
