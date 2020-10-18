@@ -21,7 +21,7 @@ public class PlayerCar implements KeyboardHandler {
 
         col = 220;
         crashed = false;
-        player = new Picture (220, 710,"/home/aristides/Documents/Academia-de-codigo/Projectos de grupo/ProjectCars/Resources/police.png" );
+        player = new Picture (220, 710,"Resources/police.jpeg" );
         player.draw();
     }
 

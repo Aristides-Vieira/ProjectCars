@@ -14,7 +14,7 @@ public class Car {
 
     public Car() {
         this.col = pickCol();
-        vehicle = new Picture(col, 10, "/home/aristides/Documents/Academia-de-codigo/Projectos de grupo/ProjectCars/Resources/car4.png");
+        vehicle = new Picture(col, 10, "Resources/car4.jpeg");
         vehicle.draw();
 
 
