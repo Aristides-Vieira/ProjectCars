@@ -18,7 +18,7 @@ public class PlayerCar implements KeyboardHandler {
     private boolean martelo;
 
     public PlayerCar() {
-
+        martelo = false;
         col = 220;
         crashed = false;
         player = new Picture (220, 710,"Resources/police.jpeg" );

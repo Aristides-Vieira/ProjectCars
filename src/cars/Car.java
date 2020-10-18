@@ -7,22 +7,27 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class Car {
 
     private Picture vehicle;
+
+
     private int counter = 0;
     private int col;
-
+    private boolean isDrawn;
 
 
     public Car() {
         this.col = pickCol();
-        vehicle = new Picture(col, 10, "Resources/car4.jpeg");
-        vehicle.draw();
-
+        isDrawn = false;
 
 
     }
 
     public void fillCar() {
-        vehicle.draw();
+
+        if (!isDrawn) {
+            vehicle = new Picture(col, 10, "Resources/car4.jpeg");
+            vehicle.draw();
+            isDrawn = true;
+        }
     }
 
 
@@ -44,14 +49,19 @@ public class Car {
     }
 
     public void move() {
-            vehicle.translate(0, 10);
-            counter++;
-        }
+        vehicle.translate(0, 10);
+        counter++;
+    }
 
     public void delete() {
         if (counter >= 71) {
             vehicle.delete();
+            isDrawn = false;
         }
+    }
+
+    public void setCounter(int counter) {
+        this.counter = counter;
     }
 
     public int getCounter() {
