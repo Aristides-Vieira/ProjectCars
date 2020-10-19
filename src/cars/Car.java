@@ -7,44 +7,28 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class Car {
 
     private Picture vehicle;
-
-
     private int counter = 0;
     private int col;
     private boolean isDrawn;
 
 
-    public Car() {
-        this.col = pickCol();
+    public Car(int col) {
+        this.col = col;
         isDrawn = false;
 
 
     }
 
+    public void setVehicle(Picture vehicle) {
+        this.vehicle = vehicle;
+    }
+
     public void fillCar() {
 
         if (!isDrawn) {
-            vehicle = new Picture(col, 10, "Resources/enemyship.png");
+            vehicle = new Picture(col, 10, "Resources/redcar.png");
             vehicle.draw();
             isDrawn = true;
-        }
-    }
-
-
-    public int pickCol() {
-
-        int random = (int) Math.round(Math.random() * 3);
-
-        switch (random) {
-
-            case 1:
-                return 220;
-            case 2:
-                return 320;
-            case 3:
-                return 420;
-            default:
-                return 520;
         }
     }
 

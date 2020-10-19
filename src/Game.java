@@ -1,5 +1,6 @@
 import cars.Car;
 import cars.PlayerCar;
+import cars.RandomGenerator;
 import org.academiadecodigo.simplegraphics.graphics.Text;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 
@@ -46,16 +47,23 @@ public class Game {
         List<Car> runningCars = new ArrayList<Car>();
 
 
+        for (int i = 0; i < 25 ; i++) {
+            parkedCars.add(new Car(RandomGenerator.pickCol()));
+            System.out.println("created new car");
+
+        }
+
+
 
         while (!playerCar.isCrashed()) {
             try {
 
-                if (timer % 11 == 0) {
+                 if (timer % 11 == 0) {
 
                     if (parkedCars.size() > 2) {
                         runningCars.add(parkedCars.remove(0));
                     } else {
-                        parkedCars.add(new Car());
+                        parkedCars.add(new Car(RandomGenerator.pickCol()));
                         runningCars.add(parkedCars.remove(0));
                     }
 
