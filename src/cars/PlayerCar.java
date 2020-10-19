@@ -1,24 +1,20 @@
 package cars;
 
-import org.academiadecodigo.simplegraphics.graphics.Color;
-import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
-import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
-import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
-import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
-import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 
-public class PlayerCar implements KeyboardHandler {
+public class PlayerCar {
 
-    private Keyboard keyboard;
+    private boolean moveLeft;
+    private boolean moveRight;
     private Picture player;
     private boolean crashed;
     private int col;
-    private boolean martelo;
+
 
     public PlayerCar() {
-        martelo = false;
+        moveLeft = false;
+        moveRight = false;
         col = 220;
         crashed = false;
         player = new Picture (220, 710,"Resources/batman.png" );
@@ -26,61 +22,42 @@ public class PlayerCar implements KeyboardHandler {
     }
 
 
-    public void init() {
 
-        keyboard = new Keyboard(this);
-
-        KeyboardEvent left = new KeyboardEvent();
-        left.setKey(KeyboardEvent.KEY_LEFT);
-        left.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
-
-
-        KeyboardEvent right = new KeyboardEvent();
-        right.setKey(KeyboardEvent.KEY_RIGHT);
-        right.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
-
-        KeyboardEvent space = new KeyboardEvent();
-        space.setKey(KeyboardEvent.KEY_SPACE);
-        space.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
-
-
-        keyboard.addEventListener(left);
-        keyboard.addEventListener(right);
-        keyboard.addEventListener(space);
-
-    }
-
-
-    @Override
-    public void keyPressed(KeyboardEvent keyboardEvent) {
+    public void playerInit() {
 
         if (!isCrashed()) {
 
-            if (KeyboardEvent.KEY_LEFT == keyboardEvent.getKey()) {
+            if (moveLeft) {
                 if (player.getX() > 220) {
 
                     player.translate(-100, 0);
                     col = col - 100;
+                    moveLeft = false;
+                } else {
+                    moveLeft = false;
                 }
             }
-            if (KeyboardEvent.KEY_RIGHT == keyboardEvent.getKey()) {
+            if (moveRight) {
                 if (player.getX() < 500) {
 
                     player.translate(100, 0);
                     col = col + 100;
+                    moveRight = false;
+                } else {
+                    moveRight = false;
                 }
             }
 
         }
-        if (KeyboardEvent.KEY_SPACE == keyboardEvent.getKey()) {
-            martelo = true;
-        }
     }
 
 
-    @Override
-    public void keyReleased(KeyboardEvent keyboardEvent) {
+    public void setMoveRight() {
+       moveRight = true;
+    }
 
+    public void setMoveLeft() {
+      moveLeft = true;
     }
 
     public int getCol() {
@@ -99,7 +76,4 @@ public class PlayerCar implements KeyboardHandler {
         crashed = true;
     }
 
-    public boolean getMartelo(){
-        return martelo;
-    }
 }

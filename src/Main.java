@@ -8,28 +8,20 @@ public class Main {
         SimpleGfxGrid grid = new SimpleGfxGrid(8);
         grid.init();
 
-        PlayerCar player = new PlayerCar();
-        Game game = new Game(player);
 
-        player.init();
-        System.out.println("player car col : " + player.getCol());
-
+        Game game = new Game(true);
         game.playGame();
-/*
-        SimpleGfxGrid grid = new SimpleGfxGrid(8);
-        grid.init();
-        PlayerCar playerCar = new PlayerCar();
-        playerCar.init();
-        Game game = new Game(playerCar);
+
         while (true) {
-            game.gameOver();
-            if (playerCar.getMartelo()) {
+
+            if (game.isReset()) {
                 game.deleteGameOverScreen();
+                grid= new SimpleGfxGrid(8);
+                grid.init();
+                game= new Game(false);
                 game.playGame();
+
             }
-
-
-      }
- */ }
+        }
+    }
 }
-
