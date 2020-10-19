@@ -91,24 +91,24 @@ public class Game {
                 }
 
 
-                if (score < 250) {
-                    Thread.sleep(200 - (level * 2));
+                if (score < 100) {
+                    Thread.sleep(100 - (level));
                     level = 0;
                     timer++;
-                } else if (score >= 250 && score < 500) {
-                    Thread.sleep(150 - (level * 2));
+                } else if (score >= 100 && score < 300) {
+                    Thread.sleep( 75 - (level));
                     level = 0;
                     timer++;
-                } else if (score >= 500 && score < 1000) {
-                    Thread.sleep(100 - level);
+                } else if (score >= 300 && score < 500) {
+                    Thread.sleep(50 - level);
                     level = 0;
                     timer++;
-                } else if (score >= 1000 && score < 1500) {
-                    Thread.sleep(50 - (level / 2));
+                } else if (score >= 500 && score < 750) {
+                    Thread.sleep(35 - (level / 2));
                     level = 0;
                     timer++;
-                } else if (score >= 1500 && score < 3000) {
-                    Thread.sleep(25 - (level / 10));
+                } else if (score >= 750 && score < 1250) {
+                    Thread.sleep(20 - (level / 10));
                     level = 0;
                     timer++;
                 } else {

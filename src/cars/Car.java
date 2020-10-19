@@ -37,13 +37,13 @@ public class Car {
 
         switch (random) {
 
-            default:
-                return 220;
             case 1:
-                return 320;
+                return 220;
             case 2:
-                return 420;
+                return 320;
             case 3:
+                return 420;
+            default:
                 return 520;
         }
     }
