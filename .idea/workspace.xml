@@ -21,6 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="56a5df51-dee7-4f77-b20e-ba1508312ed0" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/ProjectCars.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/Game.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/cars/Car.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/cars/PlayerCar.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/cars/RandomGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/simpleGfx/SimpleGfxGrid.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +119,7 @@
       <workItem from="1603182328349" duration="198000" />
       <workItem from="1603186017449" duration="715000" />
       <workItem from="1603189646186" duration="2583000" />
-      <workItem from="1603213902950" duration="915000" />
+      <workItem from="1603213902950" duration="1087000" />
     </task>
     <servers />
   </component>
