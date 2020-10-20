@@ -5,6 +5,13 @@ public class RandomGenerator {
     private static int lastRandom;
     private static int random;
 
+
+    public static int randomInt(int Min, int Max) {
+        return (int) (Math.random() * (Max - Min)) + Min;
+    }
+
+
+
     public static int pickCol() {
 
         random = (int) Math.round(Math.random() * 3);

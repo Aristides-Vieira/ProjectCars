@@ -1,23 +1,16 @@
 import cars.Car;
 import cars.PlayerCar;
 import cars.RandomGenerator;
+import org.academiadecodigo.bootcamp.Sound;
 import org.academiadecodigo.simplegraphics.graphics.Text;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
-
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.ListIterator;
-
 import org.academiadecodigo.simplegraphics.graphics.Color;
-import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
-
-import javax.swing.plaf.TableHeaderUI;
-
 
 public class Game implements KeyboardHandler {
 
@@ -30,6 +23,8 @@ public class Game implements KeyboardHandler {
     private Picture gameOverScreen;
     private Text scoreDisplay;
     private boolean x;
+    private Sound crash;
+    private Sound gameSound;
 
 
     public Game(boolean x) {
@@ -39,6 +34,9 @@ public class Game implements KeyboardHandler {
         level = 0;
         reset =  false;
 
+
+        gameSound = new Sound("/Resources/game.wav");
+        crash = new Sound("/Resources/crash.wav");
         scoreDisplay = new Text(740, 50, Integer.toString(score));
         scoreDisplay.grow(15, 15);
         scoreDisplay.draw();
@@ -49,6 +47,9 @@ public class Game implements KeyboardHandler {
 
     public void playGame() {
         /* --------------------------------------- KEYBOARD--------METHODS--------------------------------*/
+
+
+
         player = new PlayerCar();
 
         player.setCrashed(x);
@@ -78,16 +79,15 @@ public class Game implements KeyboardHandler {
 
 
     /*----------------------------------GAME METHODS-----------------------------------------*/
-
+        gameSound.play(true);
 
     List<Car> parkedCars = new ArrayList<Car>();
     List<Car> runningCars = new ArrayList<Car>();
 
 
-        for(int i = 0; i< 10; i++)  {
+        for(int i = 0; i< 40; i++)  {
 
         parkedCars.add(new Car(RandomGenerator.pickCol()));
-        System.out.println("created new car");
 
     }
 
@@ -101,7 +101,7 @@ public class Game implements KeyboardHandler {
             if (timer % 11 == 0) {
 
                 if (parkedCars.size() > 2) {
-                    runningCars.add(parkedCars.remove(0));
+                    runningCars.add(parkedCars.remove(RandomGenerator.randomInt(0,33)));
                 } else {
                     parkedCars.add(new Car(RandomGenerator.pickCol()));
                     runningCars.add(parkedCars.remove(0));
@@ -134,7 +134,7 @@ public class Game implements KeyboardHandler {
             for (int i = 0; i < runningCars.size(); i++) {
                 if (runningCars.get(i).getCounter() > 62 && runningCars.get(i).getCounter() <= 71 && runningCars.get(i).getCol() == player.getCol()) {
                     player.crash();
-                    System.out.println("Game Over");
+                   crash.play(true);
                 }
             }
 
@@ -211,7 +211,7 @@ public class Game implements KeyboardHandler {
     public void gameOver() {
 
         if(player.isCrashed()) {
-
+            gameSound.stop();
             gameOverScreen = new Picture(10, 10, "Resources/gameOver.jpg");
             gameOverScreen.draw();
             scoreDisplay = new Text(400, 250, Integer.toString(score));
